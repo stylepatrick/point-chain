@@ -100,7 +100,10 @@ func NewRootCmd() (*cobra.Command, params.EncodingConfig) {
 				return err
 			}
 
-			// TODO: remove the lines below once Cosmos SDK v0.46 is released
+			// Here they are overwritting timeout_commit with time.Second that means 1s
+			// We can remove these lines to use the config from config.toml
+			// Or we can do something like this:
+			// serverCtx.Config.Consensus.TimeoutCommit = 10 * time.Second
 			serverCtx := sdkserver.GetServerContextFromCmd(cmd)
 			serverCtx.Config.Consensus.TimeoutCommit = time.Second
 

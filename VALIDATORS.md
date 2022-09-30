@@ -1,4 +1,4 @@
-You're on the `main` branch of the repository
+### You're on the `main` branch of the repository
 
 Pick the testnet branch to see this file
 
